@@ -201,16 +201,20 @@ $(".card .list-group").sortable({
   tolerance: "pointer",
   helper: "clone",
   activate: function(event) {
-    console.log ("activate", this);
+    $(this).addClass("dropover");
+    // console.log ("activate", this);
   },
   deactivate: function(event) {
-    console.log ("deactivate", this);
+    $(this).removeClass("dropover");
+    // console.log ("deactivate", this);
   },
   over: function(event) {
-    console.log ("over", event.target);
+    $(event.target).addClass("dropover-active");
+    // console.log ("over", event.target);
   },
   out: function(event) {
-    console.log("out", event.target);
+    $(event.target).removeClass("dropover-active");
+    // console.log("out", event.target);
   },
   update:function(event) {
     // array to store the task data in
